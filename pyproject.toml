@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "textile-edge-sorting-automation-lab"
+version = "0.1.0"
+description = "Edge automation lab for textile sorting with sensor frames, computer-vision features, REST, MQTT payloads, OPC UA tags, and InfluxDB line protocol."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{ name = "Thanu Reddy Pathipati" }]
+dependencies = [
+  "fastapi>=0.115",
+  "pydantic>=2.7",
+  "uvicorn[standard]>=0.30"
+]
+
+[project.optional-dependencies]
+dev = [
+  "httpx>=0.27",
+  "pytest>=8.0"
+]
+
+[project.scripts]
+textile-edge-sort = "textile_edge_sorting.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-q"

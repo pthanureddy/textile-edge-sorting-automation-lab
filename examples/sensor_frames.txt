@@ -1,0 +1,2 @@
+station=line-1;nir=0.74;visible=0.62;moisture=0.08;weight_g=312;timestamp=2026-07-09T12:00:00Z
+station=line-1;nir=0.31;visible=0.46;moisture=0.22;weight_g=188;timestamp=2026-07-09T12:00:02Z
