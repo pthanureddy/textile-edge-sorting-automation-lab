@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "textile-edge-sorting-automation-lab"
 version = "0.1.0"
-description = "Edge automation lab for textile sorting with sensor frames, computer-vision features, REST, MQTT payloads, OPC UA tags, and InfluxDB line protocol."
+description = "Edge automation lab for textile sorting with sensor frames, REST, MQTT/UNS messages, OPC UA tags, and InfluxDB line protocol."
 readme = "README.md"
 requires-python = ">=3.11"
 authors = [{ name = "Thanu Reddy Pathipati" }]
