@@ -26,7 +26,7 @@ def test_classify_endpoint_returns_integration_payloads() -> None:
     assert response.status_code == 200
     body = response.json()
     assert body["station_id"] == "line-1"
-    assert body["mqtt_topic"] == "dotank/textile/line-1/classification"
+    assert body["mqtt_topic"] == "portfolio/lab/textile-sorting/line-1/edge-cell/sorter-01/state/classification"
     assert "influx_line" in body
     assert body["opcua_tags"]
 

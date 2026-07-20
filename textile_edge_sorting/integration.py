@@ -3,10 +3,11 @@ from __future__ import annotations
 import json
 
 from textile_edge_sorting.models import ActuatorCommand, ClassificationResult
+from textile_edge_sorting.uns import lab_uns_address
 
 
 def build_mqtt_message(result: ClassificationResult, command: ActuatorCommand) -> tuple[str, dict[str, object]]:
-    topic = f"dotank/textile/{result.station_id}/classification"
+    topic = lab_uns_address(result.station_id).topic("state", "classification")
     payload = {
         "station_id": result.station_id,
         "route": result.route.value,

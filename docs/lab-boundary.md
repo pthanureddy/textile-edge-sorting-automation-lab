@@ -4,7 +4,7 @@ This project can be described as:
 
 - a textile edge sorting automation lab,
 - a software prototype for combining sensor data, image features, routing decisions, and automation payloads,
-- a testable example of REST, MQTT-style messaging, OPC UA tag mapping, and InfluxDB line protocol output.
+- a testable example of REST, MQTT messaging in a Unified Namespace hierarchy, OPC UA tag mapping, and InfluxDB line protocol output.
 
 This project should not be described as:
 

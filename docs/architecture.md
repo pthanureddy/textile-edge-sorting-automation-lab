@@ -8,7 +8,7 @@ Serial sensor frame + textile image patch
   -> vision feature extraction
   -> textile route classifier
   -> actuator command
-  -> MQTT payload, OPC UA tags, InfluxDB line protocol
+  -> MQTT payload in a UNS topic, OPC UA tags, InfluxDB line protocol
 ```
 
 ## Module Responsibilities
@@ -20,6 +20,7 @@ Serial sensor frame + textile image patch
 | `classifier.py` | Combines sensor and vision features into a routing decision. |
 | `control.py` | Converts routing decisions into actuator commands. |
 | `integration.py` | Builds MQTT-style JSON, OPC UA tags, and InfluxDB line protocol. |
+| `uns.py` | Validates enterprise/site/area/line/cell/asset segments and builds MQTT topic paths. |
 | `api.py` | FastAPI endpoint for edge classification. |
 | `cli.py` | Reproducible command-line processing path. |
 
@@ -27,5 +28,6 @@ Serial sensor frame + textile image patch
 
 - The code is deterministic and small enough to review.
 - It uses typed Pydantic models at the API boundary and dataclasses in the core.
-- Integration adapters are payload builders rather than live external dependencies, so automated tests remain repeatable.
+- Integration adapters are contract builders rather than live external dependencies, so automated tests remain repeatable.
+- The MQTT topic hierarchy follows a Unified Namespace asset path; the same decision is mapped to OPC UA and time-series contracts.
 - The classifier is intentionally simple. The project demonstrates prototype integration, not production textile science.

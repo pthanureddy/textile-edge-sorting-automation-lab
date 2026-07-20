@@ -1,6 +1,6 @@
 # Textile Edge Sorting Automation Lab
 
-Python edge automation lab for textile sorting and circular-flow prototyping. It combines synthetic sensor frames, simple computer-vision features, routing logic, REST APIs, MQTT-style payloads, OPC UA tag mapping, and InfluxDB line protocol output.
+Python edge automation lab for textile sorting and circular-flow engineering. It combines synthetic sensor frames, simple computer-vision features, routing logic, REST APIs, MQTT messages organized as a Unified Namespace (UNS), OPC UA tag mapping, and InfluxDB line protocol output.
 
 This is a portfolio project for digitalization, AI, and automation work in textile applications. It is not connected to real machines, PLCs, Arduino, ESP32, Raspberry Pi, or production sorting equipment. The hardware boundary is represented through simulated serial frames and integration payloads so the software behavior can be reviewed and tested without lab hardware.
 
@@ -11,7 +11,8 @@ This is a portfolio project for digitalization, AI, and automation work in texti
 - Classifying textile items into reuse, cotton recycling, synthetic recycling, or manual inspection.
 - Producing actuator commands for conveyor speed, diverter gate, and reject state.
 - Exposing REST endpoints for edge classification and health checks.
-- Emitting MQTT-style JSON messages, OPC UA tag maps, and InfluxDB line protocol telemetry.
+- Emitting MQTT JSON messages in a validated enterprise/site/area/line/cell/asset UNS hierarchy.
+- Mapping the same sorting state to OPC UA tags and InfluxDB line protocol telemetry.
 - Running automated tests and GitHub Actions CI.
 
 ## Repository Structure
@@ -24,6 +25,7 @@ textile_edge_sorting/
   control.py      actuator command generation
   image.py        PPM parsing and vision feature extraction
   integration.py  MQTT payloads, OPC UA tags, InfluxDB line protocol
+  uns.py          validated Unified Namespace asset addressing
   models.py       typed domain models
   sensor.py       serial frame parser
 examples/
@@ -33,6 +35,7 @@ examples/
 docs/
   architecture.md
   lab-boundary.md
+  uns-ot-integration.md
 ```
 
 ## Quick Start
@@ -92,13 +95,13 @@ The pytest suite covers:
 - computer-vision feature extraction,
 - textile routing decisions,
 - actuator command generation,
-- MQTT, OPC UA, and InfluxDB integration payloads,
+- UNS topic validation plus MQTT, OPC UA, and InfluxDB integration payloads,
 - REST API success and validation behavior,
 - CLI execution.
 
 ## Limitations
 
 - Computer vision uses lightweight color and texture features, not a trained deep-learning model.
-- MQTT, OPC UA, and InfluxDB integrations emit payloads but do not connect to live brokers, PLCs, or databases.
+- MQTT, OPC UA, and InfluxDB integrations emit contracts but do not connect to live brokers, PLCs, or databases.
 - PLC programming, EtherCAT, and real-time machine control are documented as production boundaries and not claimed as implemented.
 - Physical prototyping with 3D printing, electronics, Arduino, ESP32, Raspberry Pi, and sensors would require lab hardware outside this workflow.

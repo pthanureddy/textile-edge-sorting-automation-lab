@@ -20,7 +20,7 @@ def test_build_mqtt_message_contains_route_and_actuator() -> None:
 
     topic, payload = build_mqtt_message(result, command)
 
-    assert topic == "dotank/textile/line-1/classification"
+    assert topic == "portfolio/lab/textile-sorting/line-1/edge-cell/sorter-01/state/classification"
     assert payload["route"] == result.route.value
     assert payload["actuator"]["diverter_gate"] == command.diverter_gate
     assert "line-1" in mqtt_payload_json(result, command)
