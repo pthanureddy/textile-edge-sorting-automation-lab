@@ -55,13 +55,13 @@ On macOS or Linux, activate with `source .venv/bin/activate`.
 textile-edge-sort --frame-file examples/sensor_frames.txt --image examples/blue_cotton.ppm
 ```
 
-Example output:
+Selected fields from the output of the command above:
 
 ```json
 {
   "station_id": "line-1",
-  "route": "cotton_recycling",
-  "confidence": 0.82,
+  "route": "reuse",
+  "confidence": 0.83,
   "actuator": {
     "diverter_gate": "A",
     "conveyor_speed_mps": 0.42
